@@ -24,13 +24,14 @@ function onSvgLoad($s) {
 
     var locations = $s.find('path[fill=#ffffff]').filter(isNotEnteredLogo);
 
-    locations
+    locations.not(':nth-child(7)')
     .mouseover(function() {
-        $(this).attr({ fill: '#000' });
+        $(this).attr({ fill: '#f8e58c', 'stroke': '#f8e58c' });
     })
     .mouseout(function() {
-        $(this).attr({ fill: '#fff' });
-    })
+        $(this).attr({ fill: '#ffffff', 'stroke': '#ffffff' });
+    });
+    locations.filter(':nth-child(7)').attr({ fill: '#bce2e8', 'stroke': '#84a2d4' });
 }
 
 })();
